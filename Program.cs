@@ -14,39 +14,43 @@ namespace DemoBaiTap3
         {
             while (true)
             {
+                int n = NhapSoNguyenN();
                 DanhSachChucNang();
-                int n = int.Parse(Console.ReadLine());
-                switch (n)
+                int k = int.Parse(Console.ReadLine());
+                switch (k)
                 {
                     case 1:
-                        BaiTap1();
+                        BaiTap1(n);
                         break;
                     case 2:
-                        BaiTap2();
+                        BaiTap2(n);
                         break;
                     case 3:
-                        BaiTap3();
+                        BaiTap3(n);
                         break;
                     case 4:
-                        BaiTap4();
+                        BaiTap4(n);
                         break;
                     case 5:
-                        BaiTap5();
+                        BaiTap5(n);
                         break;
                     case 6:
-                        BaiTap6();
+                        BaiTap6(n);
                         break;
                     case 7:
-                        BaiTap7();
+                        BaiTap7(n);
                         break;
                     case 8:
-                        BaiTap8();
+                        BaiTap8(n);
                         break;
                     case 9:
-                        BaiTap9();
+                        BaiTap9(n);
                         break;
                     case 10:
-                        BaiTap10();
+                        BaiTap10(n);
+                        break;
+                    default:
+                        Console.WriteLine("Chuc nang khong ton tai!");
                         break;
                 }
                 bool stop = DungChuongTrinh();
@@ -80,10 +84,13 @@ namespace DemoBaiTap3
             return false;
         }
 
-        private static void BaiTap1()
+        private static int NhapSoNguyenN()
         {
             Console.Write("Nhap vao so nguyen n = ");
-            int n = int.Parse(Console.ReadLine());
+            return int.Parse(Console.ReadLine());
+        }
+        private static void BaiTap1(int n)
+        {
             if (n % 3 == 0)
             {
                 Console.WriteLine("So {0} chia het cho 3", n);
@@ -93,11 +100,8 @@ namespace DemoBaiTap3
                 Console.WriteLine("So {0} khong chia het cho 3", n);
             }
         }
-        private static void BaiTap2()
+        private static void BaiTap2(int n)
         {
-            Console.Write("Nhap vao so nguyen n = ");
-            int n = int.Parse(Console.ReadLine());
-
             for (int i = 1; i <= n; i++)
             {
                 Console.WriteLine("Bang cuu chuong {0}", i);
@@ -109,20 +113,15 @@ namespace DemoBaiTap3
                 Console.WriteLine();
             }
         }
-        private static void BaiTap3()
+        private static void BaiTap3(int n)
         {
-            Console.Write("Nhap vao so nguyen n = ");
-            int n = int.Parse(Console.ReadLine());
             int s = 0;
             for (int i = 1; i <= n; i++) s += i;
             Console.WriteLine("Tong tu 1 den {0} la {1}", n, s);
             Console.WriteLine();
         }
-        private static void BaiTap4()
+        private static void BaiTap4(int n)
         {
-            Console.Write("Nhap vao so nguyen n = ");
-            int n = int.Parse(Console.ReadLine());
-
             if (Math.Sqrt(n) % 1 == 0)
             {
                 Console.WriteLine("{0} la so chinh phuong", n);
@@ -133,11 +132,8 @@ namespace DemoBaiTap3
             }
             Console.WriteLine();
         }
-        private static void BaiTap5()
+        private static void BaiTap5(int n)
         {
-            Console.Write("Nhap vao so nguyen n = ");
-            int n = int.Parse(Console.ReadLine());
-
             if (n >= 1 && n <= 12)
             {
                 Console.WriteLine("Thang {0} co {1} ngay", n, DateTime.DaysInMonth(DateTime.Now.Year, n));
@@ -148,21 +144,15 @@ namespace DemoBaiTap3
             }
             Console.WriteLine();
         }
-        private static void BaiTap6()
+        private static void BaiTap6(int n)
         {
-            Console.Write("Nhap vao so nguyen n = ");
-            int n = int.Parse(Console.ReadLine());
-
             int s = 0;
             for (int i = 1; i <= n; i++) s += (int)Math.Pow(i, i);
             Console.WriteLine("Tong cac so theo cong thuc la {0}", s);
             Console.WriteLine();
         }
-        private static void BaiTap7()
+        private static void BaiTap7(int n)
         {
-            Console.Write("Nhap vao so nguyen n = ");
-            int n = int.Parse(Console.ReadLine());
-
             int s = 0;
             for (int i = 1; i <= n; i++)
             {
@@ -171,11 +161,8 @@ namespace DemoBaiTap3
             Console.WriteLine("Tong cac so le tu 1 den {0} la {1}", n, s);
             Console.WriteLine();
         }
-        private static void BaiTap8()
+        private static void BaiTap8(int n)
         {
-            Console.Write("Nhap vao so nguyen n = ");
-            int n = int.Parse(Console.ReadLine());
-
             int bien_dem = 0;
             for (int i = 2; i <= Math.Sqrt(n); i++)
             {
@@ -192,11 +179,8 @@ namespace DemoBaiTap3
             }
             Console.WriteLine();
         }
-        private static void BaiTap9()
+        private static void BaiTap9(int n)
         {
-            Console.Write("Nhap vao so nguyen n = ");
-            int n = int.Parse(Console.ReadLine());
-
             string str = "";
             for (int i = 0; i < n; i++)
             {
@@ -205,11 +189,8 @@ namespace DemoBaiTap3
             }
             Console.WriteLine();
         }
-        private static void BaiTap10()
+        private static void BaiTap10(int n)
         {
-            Console.Write("Nhap vao so nguyen n = ");
-            int n = int.Parse(Console.ReadLine());
-
             int f0 = 0;
             int f1 = 1;
             int fN;
@@ -241,4 +222,3 @@ namespace DemoBaiTap3
             Console.WriteLine();
         }
     }
-}
